@@ -4,7 +4,7 @@ window:
   dimensions:
      columns: 133
      lines: 40
-  startup_mode: Fullscreen
+  startup_mode: Focus
 schemes:
   # Tokyo Night theme, based on both:
   #   https://github.com/ghifarit53/tokyonight-vim
