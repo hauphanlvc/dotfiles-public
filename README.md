@@ -1,4 +1,4 @@
-# Dotfiles of Hau Phan Trong
+# Dotfiles of Hau Phan Trong ~
 
 Tmux config
 Neovim config
