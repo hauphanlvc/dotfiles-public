@@ -84,7 +84,8 @@ zstyle ':omz:update' frequency 13
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git zsh-fzf-history-search fzf-zsh-plugin)
-plugins=(git zsh-fzf-history-search zsh-syntax-highlighting)
+plugins=(git zsh-fzf-history-search zsh-syntax-highlighting tmux)
+export ZSH_TMUX_CONFIG='~/.config/tmux/tmux.conf'
 # https://github.com/joshskidmore/zsh-fzf-history-search 
 # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 source $ZSH/oh-my-zsh.sh
