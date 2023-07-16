@@ -54,4 +54,6 @@ packer.startup(function(use)
   use 'L3MON4D3/LuaSnip'
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
+  -- Packer
+  use "sindrets/diffview.nvim"
 end)
