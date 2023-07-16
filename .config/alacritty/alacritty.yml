@@ -68,7 +68,7 @@ colors: *tokyo-night-storm
 
 font:
   # Point size
-  size: 8.0
+  size: 14
   normal:
     family: MesloLGLDZ Nerd Font
     style: Regular
