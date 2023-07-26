@@ -56,4 +56,5 @@ packer.startup(function(use)
   use 'windwp/nvim-ts-autotag'
   -- Packer
   use "sindrets/diffview.nvim"
+  use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
 end)
