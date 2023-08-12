@@ -57,4 +57,5 @@ packer.startup(function(use)
   -- Packer
   use "sindrets/diffview.nvim"
   use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
+  use 'lewis6991/gitsigns.nvim'
 end)
