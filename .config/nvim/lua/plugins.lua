@@ -19,8 +19,7 @@ packer.startup(function(use)
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   } -- lualine
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.1',
-    -- or                            , branch = '0.1.x',
+    'nvim-telescope/telescope.nvim', tag = '0.1.4',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
   use {
