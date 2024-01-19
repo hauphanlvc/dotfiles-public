@@ -30,6 +30,11 @@ export FZF_ALT_C_OPTS="--preview 'tree -C -a {}'"
 # source /usr/share/fzf/key-bindings.bash
 test -s ~/.alias && . ~/.alias || true
 alias vim="nvim"
+alias postman="postman >/dev/null 2>&1 &"
+alias min="min >/dev/null 2>&1 &"
+alias obsidian="obsidian >/dev/null 2>&1 &"
+alias office="LibreOffice >/dev/null 2>&1 &"
+alias mongodb-compass="mongodb-compass >/dev/null 2>&1 &"
 if [[ -z "$TMUX" ]]; then
 	if tmux ls &>/dev/null; then
 		tmux attach
@@ -47,6 +52,13 @@ export PS1="\[$(tput setaf 39)\]\u\[$(tput setaf 45)\]@\[$(tput setaf 51)\]\h \[
 # https://stackoverflow.com/questions/12247777/share-history-between-panes-windows
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# alias
+alias l='ls -alFh'
+alias la='ls -lah'
+alias ll='ls -alFh'
+alias ls='_ls -h'
+alias ls-l='ls -lh'
+
 # check if function exists and define empty one if doesn't
 if [[ $(type -t "__vte_prompt_command") != function ]]; then
 	function __vte_prompt_command() {
