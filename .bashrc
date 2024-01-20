@@ -53,11 +53,11 @@ export PS1="\[$(tput setaf 39)\]\u\[$(tput setaf 45)\]@\[$(tput setaf 51)\]\h \[
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 # alias
-alias l='ls -alFh'
-alias la='ls -lah'
-alias ll='ls -alFh'
-alias ls='_ls -h'
-alias ls-l='ls -lh'
+alias l='ls -alFh --color=auto'
+alias la='ls -lah --color=auto'
+alias ll='ls -alFh --color=auto'
+alias ls='ls -h --color=auto'
+alias ls-l='ls -lh --color=auto'
 
 # check if function exists and define empty one if doesn't
 if [[ $(type -t "__vte_prompt_command") != function ]]; then
@@ -65,3 +65,4 @@ if [[ $(type -t "__vte_prompt_command") != function ]]; then
 		return 0
 	}
 fi
+export PATH=$PATH:/usr/local/go/bin
