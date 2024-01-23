@@ -13,6 +13,8 @@
 if [ -f /etc/bash_completion ]; then
 	source /etc/bash_completion
 fi
+# Set neovim is default editor
+EDITOR=nvim
 # https://askubuntu.com/questions/339546/how-do-i-see-the-history-of-the-commands-i-have-run-in-tmux
 # avoid duplicates..
 export HISTCONTROL=ignoredups:erasedups
@@ -26,8 +28,7 @@ export FZF_DEFAULT_COMMAND='rg --hidden --files' export FZF_DEFAULT_OPTS="--layo
 # Print tree structure in the preview window
 export FZF_ALT_C_COMMAND="ls -a"
 export FZF_ALT_C_OPTS="--preview 'tree -C -a {}'"
-# source /usr/share/fzf/completion.bash
-# source /usr/share/fzf/key-bindings.bash
+
 test -s ~/.alias && . ~/.alias || true
 alias vim="nvim"
 alias postman="postman >/dev/null 2>&1 &"
@@ -35,6 +36,7 @@ alias min="min >/dev/null 2>&1 &"
 alias obsidian="obsidian >/dev/null 2>&1 &"
 alias office="LibreOffice >/dev/null 2>&1 &"
 alias mongodb-compass="mongodb-compass >/dev/null 2>&1 &"
+
 if [[ -z "$TMUX" ]]; then
 	if tmux ls &>/dev/null; then
 		tmux attach
@@ -51,7 +53,6 @@ parse_git_branch() {
 export PS1="\[$(tput setaf 39)\]\u\[$(tput setaf 45)\]@\[$(tput setaf 51)\]\h \[$(tput setaf 195)\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 # https://stackoverflow.com/questions/12247777/share-history-between-panes-windows
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 # alias
 alias l='ls -alFh --color=auto'
 alias la='ls -lah --color=auto'
@@ -65,4 +66,6 @@ if [[ $(type -t "__vte_prompt_command") != function ]]; then
 		return 0
 	}
 fi
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/go/bin/
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
