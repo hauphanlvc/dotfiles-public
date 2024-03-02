@@ -1,5 +1,3 @@
-# Dotfiles of Hau Phan Trong ~
+## My dotfiles
 
-Tmux config
-Neovim config
-Alacritty config
+This repository will be used for store some my configs such as neovim, bashrc, tmux config.
