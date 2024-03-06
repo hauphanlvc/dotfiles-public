@@ -12,6 +12,7 @@ return {
 				"tailwindcss-language-server",
 				"typescript-language-server",
 				"css-lsp",
+				"pyright",
 			})
 		end,
 	},
@@ -21,8 +22,19 @@ return {
 		"neovim/nvim-lspconfig",
 		opts = {
 			inlay_hints = { enabled = true },
+			diagnostics = { virtual_text = { prefix = "icons" } },
+			capabilities = {
+				workspace = {
+					didChangeWatchedFiles = {
+						dynamicRegistration = false,
+					},
+				},
+			},
 			---@type lspconfig.options
 			servers = {
+				pyright = {},
+				ansiblels = {},
+				bashls = {},
 				cssls = {},
 				tailwindcss = {
 					root_dir = function(...)

@@ -16,7 +16,7 @@ keymap("n", "+", "<C-a>")
 keymap("n", "-", "<C-x>")
 
 -- Delete a word backwards
-keymap("n", "dw", 'vb"_d')
+-- keymap("n", "dw", 'vb"_d')
 
 -- Select all
 keymap("n", "<C-a>", "gg<S-v>G")
