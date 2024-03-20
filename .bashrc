@@ -24,7 +24,8 @@ shopt -s histappend
 
 # After each command, save and reload history
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-export FZF_DEFAULT_COMMAND='rg --hidden --files' export FZF_DEFAULT_OPTS="--layout=reverse --border --height=60%"
+export FZF_DEFAULT_COMMAND='rg --hidden --files' 
+export FZF_DEFAULT_OPTS="--layout=reverse --border --height=60%"
 # Print tree structure in the preview window
 export FZF_ALT_C_COMMAND="ls -a"
 export FZF_ALT_C_OPTS="--preview 'tree -C -a {}'"
@@ -37,16 +38,6 @@ alias obsidian="obsidian >/dev/null 2>&1 &"
 alias office="LibreOffice >/dev/null 2>&1 &"
 alias mongodb-compass="mongodb-compass >/dev/null 2>&1 &"
 
-if [[ -z "$TMUX" ]]; then
-	if tmux ls &>/dev/null; then
-		tmux attach
-		echo "There are active tmux sessions."
-	else
-		session_name="$(date +%s)"
-		tmux new
-		echo "There are no active tmux sessions. Creating a new session: $session_name"
-	fi
-fi
 parse_git_branch() {
 	git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
