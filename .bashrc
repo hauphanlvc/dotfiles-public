@@ -17,14 +17,14 @@ fi
 EDITOR=nvim
 # https://askubuntu.com/questions/339546/how-do-i-see-the-history-of-the-commands-i-have-run-in-tmux
 # avoid duplicates..
-export HISTCONTROL=ignoredups:erasedups
+export HISTCONTROL=ignoreboth:erasedups
 
 # append history entries..
 shopt -s histappend
 
 # After each command, save and reload history
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-export FZF_DEFAULT_COMMAND='rg --hidden --files' 
+export FZF_DEFAULT_COMMAND='rg --hidden --files'
 export FZF_DEFAULT_OPTS="--layout=reverse --border --height=60%"
 # Print tree structure in the preview window
 export FZF_ALT_C_COMMAND="ls -a"

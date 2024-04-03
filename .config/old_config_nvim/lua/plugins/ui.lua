@@ -27,7 +27,8 @@ return {
 		},
 		opts = {
 			options = {
-				mode = "tabs",
+				-- mode = "tabs",
+				mode = "buffers",
 				-- separator_style = "slant",
 				show_buffer_close_icons = false,
 				show_close_icon = false,
@@ -41,7 +42,7 @@ return {
 		event = "VeryLazy",
 		opts = {
 			options = {
-				-- globalstatus = false,
+				globalstatus = false,
 			},
 		},
 	},
