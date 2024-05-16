@@ -9,25 +9,21 @@ local opts = { noremap = true, silent = true }
 --   term_mode = "t",
 --   command_mode = "c",
 
-keymap("n", "x", '"_x', opts)
+keymap("n", "x", '"_x')
 
 -- Increment/decrement
-keymap("n", "+", "<C-a>", opts)
-keymap("n", "-", "<C-x>", opts)
+keymap("n", "+", "<C-a>")
+keymap("n", "-", "<C-x>")
 
 -- Delete a word backwards
 -- keymap("n", "dw", 'vb"_d')
 
 -- Select all
-keymap("n", "<C-a>", "gg<S-v>G", opts)
+keymap("n", "<C-a>", "gg<S-v>G")
 
 -- Save with root permission (not working for now)
 --vim.api.nvim_create_user_command('W', 'w !sudo tee > /dev/null %', {})
-
--- Disable continuations
-keymap("n", "<Leader>o", "o<Esc>^Da", opts)
-keymap("n", "<Leader>O", "O<Esc>^Da", opts)
-
+--
 -- Jumplist
 keymap("n", "<C-m>", "<C-i>", opts)
 
@@ -36,7 +32,7 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- -- Clear highlights
--- keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
+keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
 -- Close buffers
 keymap("n", "<S-w>", ":bdelete<CR>", opts)
