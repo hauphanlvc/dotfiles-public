@@ -32,6 +32,8 @@ vim.opt.scrolloff = 8 -- minimal number of screen lines to keep above and below 
 vim.opt.sidescrolloff = 8 -- minimal number of screen columns to keep to the left and right of the cursor if wrap is `false`
 vim.opt.fillchars.eob = " " -- show empty lines at the end of a buffer as ` ` {default `~`}
 vim.opt.linebreak = true
+vim.opt.path:append({ "**" }) -- Finding files - Search down into subfolders
+vim.opt.wildignore:append({ "*/node_modules/*" })
 
 -- Restore cursor position
 vim.api.nvim_create_autocmd({ "BufReadPost" }, {
