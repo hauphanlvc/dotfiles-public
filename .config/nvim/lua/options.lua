@@ -1,3 +1,7 @@
+require "nvchad.options"
+
+-- add yours here!
+
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
 vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
@@ -33,7 +37,7 @@ vim.opt.fillchars.eob = " " -- show empty lines at the end of a buffer as ` ` {d
 vim.opt.linebreak = true
 vim.opt.path:append({ "**" }) -- Finding files - Search down into subfolders
 vim.opt.wildignore:append({ "*/node_modules/*" })
-
+vim.opt.termguicolors = true
 -- Restore cursor position
 vim.api.nvim_create_autocmd({ "BufReadPost" }, {
 	pattern = { "*" },
@@ -41,3 +45,5 @@ vim.api.nvim_create_autocmd({ "BufReadPost" }, {
 		vim.api.nvim_exec('silent! normal! g`"zv', false)
 	end,
 })
+-- local o = vim.o
+-- o.cursorlineopt ='both' -- to enable cursorline!
