@@ -47,3 +47,4 @@ avoid_duplicates
 load_alias
 load_fzf_config
 export PATH="~/bin/:$PATH"
+export PATH="~/.local/share/apache-maven-3.9.8/bin/:$PATH"

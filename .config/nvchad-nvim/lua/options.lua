@@ -22,7 +22,7 @@ vim.opt.updatetime = 300 -- faster completion (4000ms default)
 vim.opt.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 vim.opt.expandtab = true -- convert tabs to spaces
 vim.opt.shiftwidth = 4 -- the number of spaces inserted for each indentation
-vim.opt.tabstop = 4 -- insert 2 spaces for a tab
+vim.opt.tabstop = 2 -- insert 2 spaces for a tab
 vim.opt.softtabstop = 4
 vim.opt.cursorline = true -- highlight the current line
 vim.opt.relativenumber = true
@@ -35,15 +35,15 @@ vim.opt.scrolloff = 8 -- minimal number of screen lines to keep above and below 
 vim.opt.sidescrolloff = 8 -- minimal number of screen columns to keep to the left and right of the cursor if wrap is `false`
 vim.opt.fillchars.eob = " " -- show empty lines at the end of a buffer as ` ` {default `~`}
 vim.opt.linebreak = true
-vim.opt.path:append({ "**" }) -- Finding files - Search down into subfolders
-vim.opt.wildignore:append({ "*/node_modules/*" })
+vim.opt.path:append { "**" } -- Finding files - Search down into subfolders
+vim.opt.wildignore:append { "*/node_modules/*" }
 vim.opt.termguicolors = true
 -- Restore cursor position
 vim.api.nvim_create_autocmd({ "BufReadPost" }, {
-	pattern = { "*" },
-	callback = function()
-		vim.api.nvim_exec('silent! normal! g`"zv', false)
-	end,
+  pattern = { "*" },
+  callback = function()
+    vim.api.nvim_exec('silent! normal! g`"zv', false)
+  end,
 })
 -- local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!
