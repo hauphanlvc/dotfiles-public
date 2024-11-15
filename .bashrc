@@ -42,10 +42,14 @@ if [ -f /etc/bash_completion ]; then
 fi
 # Set neovim is default editor
 EDITOR=nvim
-export PS1="\[\033[39m\]\u\[\033[34m\]@\[\033[36m\]\h \[\033[33m\]\w\[\033[0m\]\$(parse_git_branch)\[\033[0m\] $ "
+export PS1="$(tput setaf 4)\u@$(tput setaf 6)\h $(tput setaf 2)$(date) $(tput setaf 3)\w$(tput setaf 6)\$(parse_git_branch) $(tput sgr0)$ "
 avoid_duplicates
 load_alias
 load_fzf_config
 export PATH="~/bin/:$PATH"
-export PATH="~/go/bin/:$PATH"
 export PATH="~/.local/share/apache-maven-3.9.8/bin/:$PATH"
+export PATH=$PATH:/usr/local/go/bin
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
