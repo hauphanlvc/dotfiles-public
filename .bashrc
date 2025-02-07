@@ -34,7 +34,7 @@ function load_fzf_config() {
 
 }
 parse_git_branch() {
-	git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+	git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
 
 if [ -f /etc/bash_completion ]; then
@@ -42,16 +42,17 @@ if [ -f /etc/bash_completion ]; then
 fi
 # Set neovim is default editor
 EDITOR=nvim
-export PS1="$(tput setaf 39)\u@$(tput setaf 51)\h $(tput setaf 2)$(date) $(tput setaf 62)\w$(tput setaf 11)\$(parse_git_branch) $(tput sgr0)$ "
+# export PS1="$(tput setaf 39)\u@$(tput setaf 51)\h $(tput setaf 2)$(date +"%H:%M:%S") $(tput setaf 62)\w$(tput setaf 11)\$(parse_git_branch) $(tput sgr0)$ "
+export PS1="\u@\h[\A][\w][$(parse_git_branch)]$ "
 avoid_duplicates
 load_alias
 load_fzf_config
 export PATH="~/bin/:$PATH"
-export PATH="~/.local/share/apache-maven-3.9.8/bin/:$PATH"
+# export PATH="~/.local/share/apache-maven-3.9.8/bin/:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$(go env GOPATH)/bin
 
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
